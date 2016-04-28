@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 
-ENV SHELL=/bin/bash
+ENV SHELL=/bin/bash \
+    HOME=/root
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common
@@ -16,6 +17,6 @@ RUN apt-get install -y oracle-java8-installer firefox ttf-wqy-microhei wget pcsc
 RUN update-java-alternatives -s java-8-oracle
 RUN update-java-alternatives -s java-8-oracle
 
-RUN mkdir -p $HOME/.mozilla/plugins $HOME/Downloads
-RUN ln -s /usr/lib/jvm/jre*/lib/i386/libnpjp2.so $HOME/.mozilla/plugins/
-RUN wget https://pfiles.tax.nat.gov.tw/ibxpdf/include/npHiPKIClient-linux.xpi $HOME/Downloads/linux.xpi
+RUN mkdir -p /root/.mozilla/plugins $HOME/Downloads
+RUN ln -s /usr/lib/jvm/jre*/lib/i386/libnpjp2.so /root/.mozilla/plugins/
+RUN wget https://pfiles.tax.nat.gov.tw/ibxpdf/include/npHiPKIClient-linux.xpi /root/Downloads/linux.xpi
