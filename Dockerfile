@@ -3,7 +3,6 @@ MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 
 ENV SHELL=/bin/bash
 
-RUN apt-get install -y software-properties-common
 RUN add-apt-repository "deb http://archive.canonical.com/ trusty partner"
 RUN add-apt-repository ppa:webupd8team/java
 RUN dpkg --add-architecture i386
