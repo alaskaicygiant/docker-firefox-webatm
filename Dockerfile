@@ -18,5 +18,6 @@ RUN update-java-alternatives -s java-8-oracle
 RUN update-java-alternatives -s java-8-oracle
 
 RUN mkdir -p /root/.mozilla/plugins /root/Downloads
-RUN ln -s /usr/lib/jvm/jre*/lib/i386/libnpjp2.so /root/.mozilla/plugins/
-RUN wget https://pfiles.tax.nat.gov.tw/ibxpdf/include/npHiPKIClient-linux-etax.xpi /root/Downloads/linux.xpi
+COPY /usr/lib/jvm/jre*/lib/i386/libnpjp2.so /root/.mozilla/plugins/
+ADD https://pfiles.tax.nat.gov.tw/ibxpdf/include/npHiPKIClient-linux-etax.xpi /root/Downloads/linux.xpi
+
