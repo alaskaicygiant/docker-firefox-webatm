@@ -17,6 +17,6 @@ RUN apt-get install -y oracle-java8-installer firefox ttf-wqy-microhei wget pcsc
 RUN update-java-alternatives -s java-8-oracle
 RUN update-java-alternatives -s java-8-oracle
 
-RUN mkdir -p /root/.mozilla/plugins $HOME/Downloads
+RUN mkdir -p /root/.mozilla/plugins /root/Downloads
 RUN ln -s /usr/lib/jvm/jre*/lib/i386/libnpjp2.so /root/.mozilla/plugins/
 RUN wget https://pfiles.tax.nat.gov.tw/ibxpdf/include/npHiPKIClient-linux.xpi /root/Downloads/linux.xpi
